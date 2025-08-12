@@ -1,145 +1,58 @@
-# 📊 Workshop: Building an Automated Sales Data Processing and Visualization Pipeline on AWS
+# 🚀 Serverless Container Orchestration with AWS Fargate
 
-> 📘 **Workshop live at:**  
-> 🔗 [https://vubaolongkg.github.io/FCJ_2025_Workshop](https://vubaolongkg.github.io/FCJ_2025_Workshop)
+## 🌐 Truy cập Workshop Online
 
-This is a **Hugo-based documentation site** for the workshop **Build a Serverless Data Pipeline with AWS**, designed for students in **Information Systems** who want to learn how to build modern, automated, cloud-native data pipelines using core AWS services.
+Bạn có thể xem toàn bộ nội dung workshop trực tuyến tại địa chỉ:
 
-> ✅ This workshop is part of the **AWS First Cloud Journey Internship Program (FCJ 2025)**  
-> 📚 Language: Vietnamese and English
+[https://trungquangnguyeen.github.io/Serverless-Container-Orchestration-with-AWS-Fargate/](https://trungquangnguyeen.github.io/Serverless-Container-Orchestration-with-AWS-Fargate/)
 
----
+Mỗi khi cập nhật code và push lên branch `master`, website sẽ tự động build và deploy lại.
 
-## 📌 Workshop Overview
+## 📌 Giới thiệu Workshop
+Workshop **"Serverless Container Orchestration with AWS Fargate"** hướng dẫn cách thiết kế và triển khai kiến trúc **microservices** hoàn toàn serverless trên AWS, sử dụng **Amazon ECS (Fargate)** để chạy container mà không cần quản lý hạ tầng EC2.
 
-In this hands-on lab, you will learn how to:
-
-* ☁️ Upload and store data in **Amazon S3**
-* 🔁 Automate workflows using **AWS Lambda** and **EventBridge**
-* 🧹 Clean and process data using **AWS Glue**
-* 🔍 Query data with **Amazon Athena**
-* 📊 Build dashboards using **Amazon QuickSight**
-* 🔐 Enable logging and governance with **AWS CloudTrail**
-
-You will build a complete data pipeline from uploading raw `.csv` files to generating interactive dashboards.
+Mục tiêu chính:
+- Xây dựng ứng dụng nhiều dịch vụ (multi-service application) với tối thiểu 3 microservices
+- Tích hợp CI/CD pipeline với **AWS CodePipeline** và **GitHub**
+- Thiết lập hệ thống giám sát và logging tập trung bằng **CloudWatch** và **AWS X-Ray**
+- Áp dụng **auto scaling** dựa trên CPU/Memory
+- Phân tích chi phí và kiểm thử khả năng mở rộng hệ thống
 
 ---
 
-## 📂 Repository Structure
-
-content/
-├── 1-introduction/
-├── 2-upload-to-s3/
-├── 3-setup-crawler/
-├── 4-glue-job-processing/
-├── 5-data-query-athena/
-├── 6-visualize-quicksight/
-├── 7-automate-lambda-eventbridge/
-├── 8-governance-cloudtrail/
-├── 9-cleanup/
-static/
-└── images/
-
-
----
-
-## 🚀 How to Run the Workshop
-
-To run this workshop locally:
-
-```bash
-git clone https://github.com/vubaolongkg/FCJ_2025_Workshop.git
-cd FCJ_2025_Workshop
-hugo serve
-```
-Open your browser at http://localhost:1313
-
-🌐 Live Site (GitHub Pages)
-📌 Hosted at:
-https://vubaolongkg.github.io/FCJ_2025_Workshop
-
-📄 License
-This project is for educational use only.
-All datasets are mock/demo for workshop purposes.
-
-🙇‍♂️ Credits
-Developed by:
-Vũ Bảo Long – University of Technology and Education – FCJ 2025
-Email: vubaolong1484@gmail.com
-
+## 📂 Cấu trúc Workshop
+1. **Chuẩn bị môi trường**  
+   - Tài khoản AWS, AWS CLI, Docker, Git, VS Code
+2. **Thiết lập VPC và Networking**  
+   - Public/Private subnets, NAT Gateway, Security Groups, VPC Endpoints
+3. **Tạo ECS Cluster với AWS Fargate**  
+   - Task Definition, Service, Load Balancer
+4. **Triển khai Microservices**  
+   - Build & Push Docker Image, Deploy lên ECS
+5. **Cấu hình Load Balancer**  
+   - ALB Listener, Target Groups, Routing
+6. **Monitoring & Logging**  
+   - CloudWatch Logs, Metrics, AWS X-Ray
+7. **CI/CD Pipeline**  
+   - CodePipeline, CodeBuild, GitHub Integration
+8. **Dọn dẹp tài nguyên**  
+   - Xóa services, cluster, database, VPC
 
 ---
 
-## Tiếng Việt
-
-```markdown
-# 📊 Workshop: Xây dựng hệ thống xử lý và trực quan hóa dữ liệu bán hàng tự động trên nền tảng AWS
-
-> 📘 **Workshop được triển khai tại:**  
-> 🔗 [https://vubaolongkg.github.io/FCJ_2025_Workshop](https://vubaolongkg.github.io/FCJ_2025_Workshop)
-
-Đây là tài liệu hướng dẫn thực hành cho workshop **"Xây dựng Pipeline xử lý dữ liệu tự động với AWS"**, nằm trong chương trình thực tập **AWS First Cloud Journey (FCJ 2025)** dành cho sinh viên ngành **Hệ thống thông tin**.
-
-> ✅ Thuộc chương trình thực tập **AWS FCJ 2025**  
-> 📚 Hỗ trợ song ngữ: Tiếng Việt & Tiếng Anh
+## 🎯 Kết quả mong đợi
+Sau khi hoàn thành workshop, bạn sẽ:
+- Triển khai thành công 3 dịch vụ độc lập trên **ECS Fargate**
+- CI/CD pipeline hoạt động tự động khi có code mới
+- Hệ thống tự động mở rộng (auto-scale) khi tải tăng
+- Dashboard giám sát hiển thị logs, metrics và traces đầy đủ
+- Hiểu rõ cách so sánh chi phí giữa **Fargate** và **EC2**
+- Có thể tái sử dụng kiến trúc này cho các dự án microservices khác
 
 ---
 
-## 📌 Nội dung chính
-
-Workshop giúp bạn từng bước:
-
-* ☁️ Lưu trữ dữ liệu thô trên **Amazon S3**
-* 🔁 Tự động hóa xử lý với **AWS Lambda**, **EventBridge**
-* 🧹 Làm sạch dữ liệu bằng **AWS Glue**
-* 🔍 Truy vấn dữ liệu với **Amazon Athena**
-* 📊 Xây dựng Dashboard qua **Amazon QuickSight**
-* 🔐 Theo dõi và ghi nhật ký thao tác với **AWS CloudTrail**
-
-Bạn sẽ xây dựng pipeline xử lý dữ liệu đầy đủ, từ lúc tải file `.csv` lên cho đến phân tích và hiển thị báo cáo trực quan.
-
----
-
-## 📂 Cấu trúc dự án
-
-content/
-├── 1-gioi-thieu/
-├── 2-tai-du-lieu-s3/
-├── 3-crawler-ban-dau/
-├── 4-glue-lam-sach/
-├── 5-truy-van-athena/
-├── 6-truc-quan-quicksight/
-├── 7-tu-dong-hoa-lambda/
-├── 8-kiem-soat-cloudtrail/
-├── 9-don-dep/
-static/
-└── images/
-
-
----
-
-## 🚀 Hướng dẫn chạy workshop
-
-Để chạy nội dung trên máy cá nhân:
-
-```bash
-git clone https://github.com/vubaolongkg/FCJ_2025_Workshop.git
-cd FCJ_2025_Workshop
-hugo serve
-
-
-Mở trình duyệt tại http://localhost:1313
-
-🌐 Trang web chính thức
-📌 Được deploy tại:
-https://vubaolongkg.github.io/FCJ_2025_Workshop
-
-📄 Bản quyền
-Đây là tài liệu học tập, sử dụng cho mục đích đào tạo.
-Mọi dữ liệu trong dự án đều mang tính mô phỏng.
-
-🙇‍♂️ Người thực hiện
-Tác giả:
-Vũ Bảo Long – Đại học Sư phạm Kỹ thuật – FCJ 2025
-Email: vubaolong1484@gmail.com
-
+## 📚 Tài liệu tham khảo
+- [AWS Fargate Documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html)  
+- [Amazon ECS Best Practices](https://aws.github.io/aws-ecs-best-practices/)  
+- [AWS CodePipeline Docs](https://docs.aws.amazon.com/codepipeline/)  
+- [AWS CloudWatch Logs](https://docs.aws.amazon.com/cloudwatch/)  
