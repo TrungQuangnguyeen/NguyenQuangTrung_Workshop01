@@ -3,7 +3,7 @@
 🌐 Truy cập Online:
 
 Bạn có thể xem toàn bộ nội dung workshop trực tuyến tại địa chỉ:
-https://trungquangnguyeen.github.io/Serverless-Container-Orchestration-with-AWS-Fargate/
+https://trungquangnguyeen.github.io/Serverless-Container-Orchestration/
 ---
 ## 🇬🇧 Introduction
 The **"Serverless Container Orchestration with AWS Fargate"** workshop guides you through designing and deploying a **fully serverless microservices architecture** on AWS, using **Amazon ECS (Fargate)** to run containers without managing EC2 instances.
