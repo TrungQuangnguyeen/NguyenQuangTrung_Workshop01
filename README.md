@@ -1,6 +1,7 @@
 # 🚀 Serverless Container Orchestration with AWS Fargate
 ---
-🌐 Truy cập Workshop Online
+🌐 Truy cập Online:
+
 Bạn có thể xem toàn bộ nội dung workshop trực tuyến tại địa chỉ:
 https://trungquangnguyeen.github.io/Serverless-Container-Orchestration-with-AWS-Fargate/
 ---
